@@ -1,7 +1,7 @@
 const path = require("path")
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-module.exports={
-    entry: "./src/easy/leetCode7.numberReverse.ts",
+module.exports = {
+    entry: "./src/easy/index.ts",
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -12,10 +12,10 @@ module.exports={
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader",exclude: /node_modules/}
+            { test: /\.tsx?$/, loader: "ts-loader", exclude: /node_modules/ }
         ]
     },
     plugins: [new HtmlWebpackPlugin({
-        template:"./src/index.html"
+        template: "./src/index.html"
     })],
 }
