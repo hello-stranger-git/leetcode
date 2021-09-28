@@ -29,34 +29,34 @@
  * @param {number} x
  * @return {number}
  */
- var reverse = function(x:number) {
-    if(x===0){
+var reverse = function (x: number) {
+    if (x === 0) {
         return 0
     }
     //将数值转换为字符串进行切割
-    let arr:string[]|number
-    arr = (x+"").split("")
-    let fh:string = ""
+    let arr: string[] | number
+    arr = (x + "").split("")
+    let fh: string = ""
     //判断正负数，并且保存符号
-    if(arr[0]==="-"||arr[0]==="+"){
+    if (arr[0] === "-" || arr[0] === "+") {
         fh = arr[0]
         arr = arr.splice(1)
     }
     //反转数组
     arr = arr.reverse()
     // 去除数组里面的0元素
-    arr = arr.filter((item:string):boolean=>{
-        return parseInt(item)!==0
+    arr = arr.filter((item: string): boolean => {
+        return parseInt(item) !== 0
     })
     // 将数据转换为字符串后在转换为数值
     arr = parseInt(arr.join(""))
-    if(fh==="-"){
+    if (fh === "-") {
         return -arr
-    }else{
+    } else {
         return arr
     }
 };
 
 //通过取余的方法
-var reverseNew = function(x:number) {
+var reverseNew = function (x: number) {
 }
