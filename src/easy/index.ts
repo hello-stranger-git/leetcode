@@ -51,5 +51,28 @@ class Easy {
         return sum
 
     };
+    // 20. 有效的括号
+    isValid(s: string): boolean {
+        //保存括号
+        let stack: string[] = []
+        for (let i = 0; i < s.length; i++) {
+            const element = s[i];
+            if (element === "(" || element === "{" || element === "[") {
+                stack.push(element)
+            } else if (element === ")" || element === "}" || element === "]") {
+                // 取出当前最后一个元素做对比
+                let lastEle = stack[stack.length - 1]
+                if (lastEle === "(" && element === ")") {
+                    stack.pop()
+                } else if (lastEle === "{" && element === "}") {
+                    stack.pop()
+                } else if (lastEle === "[" && element === "]") {
+                    stack.pop()
+                } else {
+                    stack.push(element)
+                }
+            }
+        }
+        return stack.length === 0
+    };
 }
-new Easy().romanToInt("II")
